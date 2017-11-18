@@ -26,6 +26,7 @@ Settings can be configured either in the Preferences or by editing `~/.atom/conf
 
 ```cson
 'linter-flowtype':
+  lintOnChange: true
   onlyLintIfConfigExists: true
   showUncovered: false
   executablePath: ''
@@ -33,6 +34,7 @@ Settings can be configured either in the Preferences or by editing `~/.atom/conf
   hyperclickPriority: 0
 ```
 
+- `lintOnChange` - if disabled, linting will only happen when a file is saved
 - `onlyLintIfConfigExists` - only lint if a `.flowconfig` file exists
 - `showUncovered` - if enabled, display uncovered lines
 - `executablePath` - if set, this path will be used to run `flow` (otherwise it will use `flow` from the PATH or from `node_modules`)
