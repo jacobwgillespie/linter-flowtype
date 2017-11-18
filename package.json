@@ -5,14 +5,8 @@
   "description": "Lightweight flow linting, autocomplete, outline, and hyperclick for Atom",
   "author": "jacobwgillespie",
   "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/jacobwgillespie/linter-flowtype.git"
-  },
+  "repository": "https://github.com/jacobwgillespie/linter-flowtype",
   "homepage": "https://github.com/jacobwgillespie/linter-flowtype",
-  "bugs": {
-    "url": "https://github.com/jacobwgillespie/linter-flowtype/issues"
-  },
   "keywords": [
     "flow",
     "flowtype",
