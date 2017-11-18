@@ -1,0 +1,124 @@
+{
+  "private": true,
+  "name": "linter-flowtype",
+  "version": "1.0.0",
+  "description": "Lightweight flow linting, autocomplete, outline, and hyperclick for Atom",
+  "author": "jacobwgillespie",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jacobwgillespie/linter-flowtype.git"
+  },
+  "homepage": "https://github.com/jacobwgillespie/linter-flowtype",
+  "bugs": {
+    "url": "https://github.com/jacobwgillespie/linter-flowtype/issues"
+  },
+  "keywords": [
+    "flow",
+    "flowtype",
+    "ide",
+    "javascript"
+  ],
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "apm test",
+    "lint": "eslint . && flow"
+  },
+  "package-deps": [
+    "linter",
+    "hyperclick"
+  ],
+  "engines": {
+    "atom": ">=1.4.0 <2.0.0"
+  },
+  "prettier": {
+    "bracketSpacing": false,
+    "printWidth": 100,
+    "semi": false,
+    "singleQuote": true
+  },
+  "dependencies": {
+    "atom-autocomplete": "^1.0.0",
+    "atom-linter": "^10.0.0",
+    "atom-package-deps": "^4.4.1",
+    "flow-language-server": "^0.2.3",
+    "sb-string_score": "^0.1.20"
+  },
+  "devDependencies": {
+    "babel-eslint": "^8.0.2",
+    "eslint": "^4.11.0",
+    "eslint-config-prettier": "^2.7.0",
+    "eslint-plugin-flowtype": "^2.39.1",
+    "eslint-plugin-import": "^2.8.0",
+    "eslint-plugin-prettier": "^2.3.1",
+    "flow-bin": "^0.59.0",
+    "prettier": "1.8.2"
+  },
+  "configSchema": {
+    "lintOnChange": {
+      "title": "Lint files as-you-type",
+      "description": "If disabled, linting will happen whenever the file is saved vs whenever you type (requires restart)",
+      "type": "boolean",
+      "default": true
+    },
+    "onlyLintIfConfigExists": {
+      "title": "Only activate when .flowconfig exists",
+      "type": "boolean",
+      "default": true
+    },
+    "showUncovered": {
+      "title": "Show uncovered code in the editor",
+      "type": "boolean",
+      "default": false
+    },
+    "executablePath": {
+      "description": "Path to `flow` executable",
+      "type": "string",
+      "default": ""
+    },
+    "useLocalFlowBin": {
+      "description": "Use the locally-installed `flow` in `node_modules` if available",
+      "type": "boolean",
+      "default": true
+    },
+    "hyperclickPriority": {
+      "description": "Priority to use for hyperclick provider (requires restart)",
+      "type": "integer",
+      "default": "0"
+    }
+  },
+  "providedServices": {
+    "autocomplete.provider": {
+      "versions": {
+        "2.0.0": "provideAutocomplete"
+      }
+    },
+    "hyperclick.provider": {
+      "versions": {
+        "0.0.0": "provideHyperclick"
+      }
+    },
+    "linter": {
+      "versions": {
+        "2.0.0": "provideLinter"
+      }
+    },
+    "outline-view": {
+      "versions": {
+        "0.1.0": "provideOutlines"
+      }
+    }
+  },
+  "consumedServices": {
+    "datatip": {
+      "versions": {
+        "0.1.0": "consumeDatatip"
+      }
+    },
+    "status-bar": {
+      "versions": {
+        "^1.0.0": "consumeStatusBar"
+      }
+    }
+  }
+}
