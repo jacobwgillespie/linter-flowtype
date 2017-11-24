@@ -1,7 +1,7 @@
 {
   "private": true,
   "name": "linter-flowtype",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Lightweight flow linting, autocomplete, outline, and hyperclick for Atom",
   "author": "jacobwgillespie",
   "license": "MIT",
